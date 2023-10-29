@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	
+	<title>TP Leaflet</title>
+	
+    <link rel="stylesheet" href="leaflet.css" />
+    <script src="leaflet.js"></script>
+    <script src='Leaflet.fullscreen.min.js'></script>
+	<link rel='stylesheet' href='leaflet.fullscreen.css' />
+	<link href="Leaflet.AnimatedSearchBox.css" rel="stylesheet">
+    <script src="Leaflet.AnimatedSearchBox.js"></script>
+    <link rel="stylesheet" type="text/css" href="L.Control.ZoomBar.css"/>
+    <script type="text/javascript" src="L.Control.ZoomBar.js"></script>
+
+
+	
+</head>
+<body>
+
+
+
+<div id="map" style="width: 1000px; height: 1000px;"></div>
+<script>
+
+	var map = L.map('map').setView([33.9772324, -6.861615], 15);
+
+	 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+
+	 L.marker([33.9763807,-6.8675063]).addTo(map)
+		.bindPopup('<b>Département des Sciences Géomatiques et Ingénierie Topographique</b><br />I am the best.').openPopup();
+
+	 L.marker([33.977298, -6.865871]).addTo(map)
+		.bindPopup('<b>Département Génie Rural</b>.').openPopup();
+
+	 L.marker([33.9798171,-6.8642041]).addTo(map)
+		.bindPopup('<b>Département des Sciences Humaines</b>.').openPopup();
+
+	 L.marker([33.979292, -6.864013]).addTo(map)
+		.bindPopup('<b>Département des Production Animales</b>.').openPopup();
+
+	 L.marker([33.980071693528586, -6.861735049146822]).addTo(map)
+		.bindPopup('<b>Pavillon Garçons</b>.').openPopup();
+
+	 L.marker([33.980163412716728, -6.862041618129224]).addTo(map)
+		.bindPopup('<b>Restaurant IAV</b>.').openPopup();
+
+	 L.marker([33.980444392165069, -6.862504811850894]).addTo(map)
+		.bindPopup('<b>Buvette IAV</b>.').openPopup();
+
+	 L.marker([33.980116407966143, -6.862555029699106]).addTo(map)
+		.bindPopup('<b>CDA et Salle d\'étude</b>.').openPopup();
+
+	 L.marker([33.974809743766848, -6.866898976074701]).addTo(map)
+		.bindPopup('<b>Grand-Amphi AGRO (Garçons)</b>.').openPopup();
+
+	 L.marker([33.976338548806147, -6.867248356727723]).addTo(map)
+		.bindPopup('<b>Amphithéàtre Véto</b>.').openPopup();
+
+	 L.marker([33.980082215439772, -6.863151074524071]).addTo(map)
+		.bindPopup('<b>Amphithéâtre Paul Pascon</b>.').openPopup();
+
+	 L.marker([33.980265375600297, -6.863611621748512]).addTo(map)
+		.bindPopup('<b>Bureau d\'ordre</b>.').openPopup();
+
+	 L.marker([33.976192444169428, -6.868799395081303]).addTo(map)
+		.bindPopup('<b>Club El Harka</b>.').openPopup();
+
+	 L.marker([33.976903380861877, -6.868157805154839]).addTo(map)
+		.bindPopup('<b>Espace Equitation</b>.').openPopup();
+
+	 L.marker([33.974325639816556, -6.868603530169759]).addTo(map)
+		.bindPopup('<b>Clinique Equine</b>.').openPopup();
+
+	 L.marker([33.97686475001987, -6.865996684305028]).addTo(map)
+		.bindPopup('<b>Capacity Building Center</b>.').openPopup();
+
+	 L.marker([33.974764962642141, -6.869492903473343]).addTo(map)
+		.bindPopup('<b>ONSSA</b>.').openPopup();
+
+
+
+	const polygon5 = L.polygon([
+        [33.974737, -6.866147],
+        [33.974582, -6.865908],
+        [33.974377, -6.866097],
+        [33.974537, -6.866338]
+    ]).addTo(map).bindPopup('Département Industrie Agro-alimentaire');
+
+	const polygon1 = L.polygon([
+		[33.9814671, -6.8641799],
+        [33.9816876, -6.8639918],
+        [33.9809400, -6.8628810],
+        [33.9809094, -6.8628083],
+        [33.9808777, -6.8627251],
+        [33.9808569, -6.8626510],
+        [33.9808469, -6.8625491],
+        [33.9808127, -6.8623268],
+        [33.9806978, -6.8607266],
+        [33.9806648, -6.8607356],
+        [33.9792499, -6.8618940],
+        [33.9797328, -6.8626302],
+        [33.9789471, -6.8633551],
+        [33.9765564, -6.8658010],
+        [33.9761671, -6.8658952],
+        [33.9747160, -6.8638553],
+        [33.9716131, -6.8667763],
+        [33.9722459, -6.8676785],
+        [33.9714315, -6.8684242],
+        [33.9724364, -6.8700020],
+        [33.9725829, -6.8699074],
+        [33.9727734, -6.8698501],
+        [33.9736119, -6.8698484],
+        [33.9736595, -6.8698172],
+        [33.9736981, -6.8697653],
+        [33.9737151, -6.8697478],
+        [33.9740476, -6.8697502],
+        [33.9741141, -6.8697757],
+        [33.9746532, -6.8706604],
+        [33.9814299, -6.8642007]
+    ]).addTo(map).bindPopup('IAV');
+
+	const polygon2 = L.polygon([
+        [33.98125289294596, -6.863769700031235],
+        [33.980779415678754, -6.863026765174616],
+        [33.980550746735986, -6.863218176338547],
+        [33.981010774218355, -6.863983820994278]
+    ]).addTo(map).bindPopup('Parking');
+
+	const polygon11 = L.polygon([
+        [33.98043001813508, -6.864347247095328],
+        [33.98034388848849, -6.864205610064964],
+        [33.98014813896714, -6.864436950547892],
+        [33.98024601378417, -6.864559702640876]
+    ]).addTo(map).bindPopup('Parking Administration');
+
+
+
+
+
+
+
+		map.addControl(new L.Control.Fullscreen());
+
+	map.isFullscreen() // Is the map fullscreen?
+	map.toggleFullscreen() // Either go fullscreen, or cancel the existing fullscreen.
+
+	map.on('fullscreenchange', function () {
+    	if (map.isFullscreen()) {
+        	console.log('entered fullscreen');
+    	} else {
+        	console.log('exited fullscreen');
+    	}
+	});
+
+	var searchbox = L.control.searchbox({
+    position: 'topright',
+    expand: 'left',
+    iconPath: 'img/search_icon.png'
+    }).addTo(map);
+
+    var zoom_bar = new L.Control.ZoomBar({position: 'topright'}).addTo(map);
+
+
+
+
+	
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
